@@ -17,13 +17,13 @@ do
 # Random prompts
 rand=$(( RANDOM % 3 ))
 case $rand in 
-	0) echo "\nHow may I help you?\n"
+	0) echo -e "\nHow may I help you?\n"
 	;;
-	1) echo "\nWhat may I do for you today?\n"
+	1) echo -e "\nWhat may I do for you today?\n"
 	;;
-	2) echo "\nHello Detective! How can I be of service?\n"
+	2) echo -e "\nHello Detective! How can I be of service?\n"
 	;;
-	*) echo "\nAny news on your investigation?\n"
+	*) echo -e "\nAny news on your investigation?\n"
 	;;
 
 esac
@@ -70,10 +70,10 @@ case $selection in
 
 EOF
 
-		read -p "Enter selection [0-8]" killer
-		read -p "Are you absolutely positive? That is a serious accusation against $killer [y-n]" lockIn
+		read -p "Enter selection [0-8] > " killer
+		read -p "Are you absolutely positive? That is a serious accusation against $killer [y-n] > " lockIn
 		case $lockIn in
-			y) continue
+			y)
 			;;
 			n) echo -e "\nNeed some more time to think? I don't envy your tough decision.\n"
 			break
@@ -110,8 +110,8 @@ EOF
 			sleep 5
 			echo -e "\n\nYou Win!! Congradulations! I hope you enjoyed playing \"The LARK Files\"!"
 			sleep 15
-			quit
 			resetVar
+			quit
 			;;
 			6)
 			echo -e "\nI know all of the staff quite well, and that poor woman would never hurt a soul!\n"
