@@ -1,9 +1,52 @@
 #!/bin/bash
-#character/item name
+#character name
 
 cat << EOF
 #put description of character and the first thing they say here.
-
 EOF
 
+talking=true
+while [ talking -eq true ]
+do
+# Random prompts
+rand=(( $RANDOM % 2 ))
+case $rand in 
+	0) echo "_____________"
+	;;
+	1) echo "_____________"
+	;;
+	2) echo "_____________"
+	;;
+	*) echo "_____________"
+	;;
 
+esac
+
+cat << EOF	
+
+                        Please Select:
+
+                        1. What did you think of Sir Walter Oswald?
+                        2. Where were you at the time of the murder?
+			3. Anything else you want to note?
+                        0. (Stop Talking)
+EOF
+
+read -p "Enter selection [0-3] > " selection
+
+# act on selection
+case $selection in
+        1) #reply to question 1
+        ;;
+        2) #reply to question 2
+        ;;
+	3) #reply to question 3
+	;;
+        0) talking=false
+	 break
+        ;;
+        *) echo "Invalid entry."
+        ;;
+esac
+done
+clear
