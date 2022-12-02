@@ -19,6 +19,8 @@ When you believe that you have figured out who murdered Sir Walter Oswald, find 
 is the one who you will bring your findings to.
 
 Common Commands:
+     commands - lists all of the commands
+
      map - Prints a map of the house
 
      ls (directory/file) - Use the current directory to "look" around the room, and use "ls inventory" to check your inventory.
