@@ -28,8 +28,7 @@ function map {
         }
 originalPS1=$PS1
 home=$(pwd)
-notes=$home/inventory/notes
-inventory=$home/inventory
+notes=$home/.notes
 commands="cat $home/.commands"
 quit="cd $home && export PS1=originalPS1 && clear"
 
@@ -40,7 +39,7 @@ tput smcup
 	while [[ $REPLY != 0 ]]; do
 		echo -n ${BG_CYAN}${FG_MAGENTA}
 		clear
-		cat <<EOF
+		cat << EOF
 			Please Select:
 
 			1. Log into Lark Game
