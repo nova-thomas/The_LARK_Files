@@ -13,13 +13,13 @@ do
 # Random prompts
 rand=$(( RANDOM % 3 ))
 case $rand in 
-	0) echo "\nHuh? oh hi. What can do for you?\n"
+	0) echo -e "\nHuh? oh hi. What can do for you?\n"
 	;;
-	1) echo "\nShoot, didn't see you there Detective!\n"
+	1) echo -e "\nShoot, didn't see you there Detective!\n"
 	;;
-	2) echo "\nHello! If there's anything I can do to help, let me know.\n"
+	2) echo -e "\nHello! If there's anything I can do to help, let me know.\n"
 	;;
-	*) echo "\n(John bolts to attention) Detective! What can I do to help?\n"
+	*) echo -e "\n(John bolts to attention) Detective! What can I do to help?\n"
 	;;
 
 esac
