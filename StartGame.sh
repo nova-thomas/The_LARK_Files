@@ -10,6 +10,7 @@ function resetVar() {
 	unset inventory
 	unset commands
 	unset originalPS1
+	unset inventory
 }
 
 function map {
@@ -23,12 +24,16 @@ function quit {
 	clear
 }
 
+function take {
+	cp $1 $home/.inventory
+}
+
 resetVar
 
 originalPS1=$PS1
 home=$(pwd)
 commands="cat $home/.commands"
-
+inventory="cat $home/.inventory"
 export home
 export commands
 export originalPS1

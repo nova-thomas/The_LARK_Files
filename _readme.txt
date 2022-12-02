@@ -15,7 +15,9 @@ the house, collecting clues, and figurin out who murdered poor Mr. Oswald.
 Instructions: 
 To start the game, type ". ./StartGame"
 
-When you believe that you have figured out who murdered Sir Walter Oswald, find the Butler, and interact with him. He is the one who you will bring your findings to.
+When you believe that you have figured out who murdered Sir Walter Oswald, find the Butler, and interact with him. He is the one who you will bring your findings to. 
+You must gather 5 pieces of evidence before making the accusation. Luckily there are only 5 pieces of evidence!
+Some items are hidden though, so look closely!
 
 Common Commands:
 
@@ -27,6 +29,8 @@ Common Commands:
 
      quit - Quits the game and brings you to the home directory.
 
+     take (item) - puts a copy of that item in your inventory. You need 5 pieces of evidence to accuse the murderer!
+
 	Unix/Linux Commands:
 
      ls (directory/file) - Use the current directory to "look" around the room, and use "ls inventory" to check your inventory.
@@ -37,8 +41,6 @@ Common Commands:
 
      . ./(script name) - Use this for interacting with characters and items.
 
-     echo \$inventory - Check the contents of your inventory.
-
-     export inventory=(item), \$inventory - adds an item to your inventory
+     echo $inventory - Check the contents of your inventory.
 
 Happy Sleuthing!
