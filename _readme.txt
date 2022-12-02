@@ -19,11 +19,17 @@ When you believe that you have figured out who murdered Sir Walter Oswald, find 
 is the one who you will bring your findings to.
 
 Common Commands:
-ls (directory/file) - Use the current directory to "look" around the room, and use "ls inventory" to check your inventory.
-ls -a - Use this to look around the current "room" very closely for hidden items.
-tail (file) - Use this to "inspect" an item or character.
-mv (file) ~/The_LARK_Files_Nova_Thomas/inventory - Used for moving an item to your inventory.
-./(script name) - Use this for interacting with characters and items.
+     ls (directory/file) - Use the current directory to "look" around the room, and use "ls inventory" to check your inventory.
+
+     ls -a - Use this to look around the current "room" very closely for hidden items.
+
+     tail (file) - Use this to "inspect" an item or character.
+
+     mv (file) ~/The_LARK_Files_Nova_Thomas/inventory - Used for moving an item to your inventory.
+
+     ./(script name) - Use this for interacting with characters and items.
+
+     vim ~/The_LARK_Files_Nova_Thomas/inventory/notes -  opens up a text editor to take notes about your findings.
 
 You can read this at any time by typing "cat ~/The_LARK_Files_Nova_Thomas/_readme.txt".
 
