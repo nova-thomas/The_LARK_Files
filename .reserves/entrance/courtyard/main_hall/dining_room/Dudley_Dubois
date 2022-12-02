@@ -2,9 +2,11 @@
 # Dudley Dubois
 
 cat << EOF
+
 Dudley Dubois has been the butler of the Oswald household for many years. He cares about each 
 and every member of the household and staff. Everyone except Sir Walter Oswald. Walter had a
 history of violence and abuse towards everyone he met, and Dudley resented him for that.
+
 EOF
 
 sleep 1
@@ -13,15 +15,15 @@ talking=0
 while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=$(( RANDOM % 2 ))
+rand=$(( RANDOM % 3 ))
 case $rand in 
-	0) echo "How may I help you?"
+	0) echo "\nHow may I help you?\n"
 	;;
-	1) echo "What may I do for you today?"
+	1) echo "\nWhat may I do for you today?\n"
 	;;
-	2) echo "Hello Detective! How can I be of service?"
+	2) echo "\nHello Detective! How can I be of service?\n"
 	;;
-	*) echo "Any news on your investigation?"
+	*) echo "\nAny news on your investigation?\n"
 	;;
 
 esac
@@ -35,24 +37,26 @@ cat << EOF
 			3. Anything else you want to note?
 			4. I know who killed Sir Walter Oswald!
                         0. (Stop Talking)
+
 EOF
 
 read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) echo "I hate to speak ill of the dead, but he was a very cruel man. He has done some horrible things in his life, and excuse my words, but the family will be better off without him around."
+        1) echo -e "\nI hate to speak ill of the dead, but he was a very cruel man. He has done some horrible things in his life, and excuse my words, but the family will be better off without him around.\n"
         ;;
-        2) echo "I was conversing with the gardener in the conservatory when I heard the chef shout that dinner was about to be ready. So, as any butler would, I went up to inform Sir Oswald, and that was wnen I found him, tragically murdered..."
+        2) echo -e "\nI was conversing with the gardener in the conservatory when I heard the chef shout that dinner was about to be ready. So, as any butler would, I went up to inform Sir Oswald, and that was wnen I found him, tragically murdered...\n"
         ;;
-	3) echo "Now I know no one here would murder anyone, but I do think that Mr. Benson is a bit too violent for my liking. That is all I will say!!"
+	3) echo -e "\nNow I know no one here would murder anyone, but I do think that Mr. Benson is a bit too violent for my liking. That is all I will say!!\n"
 	;;
 	4)
 	invCount=$(ls -a $home/.inventory | grep -v .maid_lingerie | wc -l)
-	if [ invCount -ge 5 ]
+	if [ $invCount -ge 5 ]
 	then
-		echo "Oh? Wonderful news! And who is the murderous fellow?"
+		echo -e "\nOh? Wonderful news! And who is the murderous fellow?\n"
 		cat << EOF
+
 			1. Sir Walter Oswald
 			2. Sarah Oswald
 			3. John Oswald
@@ -63,6 +67,7 @@ case $selection in
 			8. Butch Benson
 			9. Dudley Dubois
 			0. I need some more time to go over my notes
+
 EOF
 
 		read -p "Enter selection [0-8]" killer
@@ -70,74 +75,74 @@ EOF
 		case $lockIn in
 			y) continue
 			;;
-			n) echo "Need some more time to think? I don't envy your tough decision."
+			n) echo -e "\nNeed some more time to think? I don't envy your tough decision.\n"
 			break
 			;;
-			*) echo "Invalid Entry"
+			*) echo -e "\nInvalid Entry\n"
 			;;
 		esac
 		
 		
 		case $killer in 
 			1)
-			echo "A suicide, eh? I don't believe that to be true, the knife was too far away from the body for that."
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nA suicide, eh? I don't believe that to be true, the knife was too far away from the body for that.\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			break
 			;;
 			2)
-			echo "His own wife? That's a bold accusation. Are you sure the evidence points to her?"
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nHis own wife? That's a bold accusation. Are you sure the evidence points to her?\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			3)
-			echo "The eldest son. I could understand how the pressure might bring him to something drastic, but I believe he is too kind to do something of this degree."
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nThe eldest son. I could understand how the pressure might bring him to something drastic, but I believe he is too kind to do something of this degree.\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			4)
-			echo "Ah, the black sheep of the family. They're one of the kindest Oswald's if you get to know them. No, I don't believe that Alex was the murderer."
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nAh, the black sheep of the family. They're one of the kindest Oswald's if you get to know them. No, I don't believe that Alex was the murderer.\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			5) #Mary Oswald, winning condition
-			echo "Detective: It looks like all the evidence points to Mary Oswald!"
+			echo -e "\nDetective: It looks like all the evidence points to Mary Oswald!\n"
 			sleep 1
-			echo "\nMy God! I do believe you're right! I can't believe that this happened..."
+			echo -e "\nMy God! I do believe you're right! I can't believe that this happened...\n"
 			sleep 1
-			echo "\n\nFrom what you can tell, Mary Oswald summoned a demon. Maybe to fix her broken family, maybe to stop all the hatred from those around her in her life, maybe some other reason entirely.\n\nDespite Mary being posessed, the law still sees her guilty of Murder. Maybe one day someone will be able to track down this demon and rid him from this world."
+			echo -e "\n\nFrom what you can tell, Mary Oswald summoned a demon. Maybe to fix her broken family, maybe to stop all the hatred from those around her in her life, maybe some other reason entirely.\n\nDespite Mary being posessed, the law still sees her guilty of Murder. Maybe one day someone will be able to track down this demon and rid him from this world."
 			sleep 5
-			echo "\n\nYou Win!! Congradulations! I hope you enjoyed playing \"The LARK Files\"!"
+			echo -e "\n\nYou Win!! Congradulations! I hope you enjoyed playing \"The LARK Files\"!"
 			sleep 15
 			quit
 			resetVar
 			;;
 			6)
-			echo "I know all of the staff quite well, and that poor woman would never hurt a soul!"
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nI know all of the staff quite well, and that poor woman would never hurt a soul!\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			7)
-			echo "Killing Sir Oswald for ruining is garden's is a bit extreme, don't you think?"
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nKilling Sir Oswald for ruining is garden's is a bit extreme, don't you think?\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			8)
-			echo "Now I know that Butch is an abrasive fellow, but I don't believe he could have murdered Sir Oswald. He was in the kitchen the whole time!"
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nNow I know that Butch is an abrasive fellow, but I don't believe he could have murdered Sir Oswald. He was in the kitchen the whole time!\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			9)
-			echo "Me? How dare you!! I've served this family for many years, and I would never let my personal feelings boil to the point of murder!!"
-			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			echo -e "\nMe? How dare you!! I've served this family for many years, and I would never let my personal feelings boil to the point of murder!!\n"
+			echo -e "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!\n"
 			;;
 			0)
-			echo "No worries Detective! We don't want to accuse the wrong person."
+			echo -e "\nNo worries Detective! We don't want to accuse the wrong person.\n"
 			;;
-			*) echo "Invalid Entry"
+			*) echo -e "\nInvalid Entry\n"
 			;;
 		esac
 	else
-	echo "I'm sorry, it doesn't look like you have all the evidence! Please come back when you have gathered everything."
+	echo -e "\nI'm sorry, it doesn't look like you have all the evidence! Please come back when you have gathered everything.\n"
 	fi
 	;;
         0) talking=1
 	 break
         ;;
-        *) echo "Invalid entry."
+        *) echo -e "\nInvalid entry.\n"
         ;;
 esac
 done

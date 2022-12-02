@@ -2,22 +2,24 @@
 # Mary Oswald
 
 cat << EOF
+
 Mary Oswald is the youngest of the three kids, if you remember your notes correctly. She seems quite timid and shy, although you don't know if that's how she usually is, or if it's just because of what happened to her father. Whatever the case, she never meets your eyes when you try to talk to her.
+
 EOF
 
 talking=0
 while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=$(( RANDOM % 2 ))
+rand=$(( RANDOM % 3 ))
 case $rand in 
-	0) echo "Hello Detective..."
+	0) echo -e "\nHello Detective...\n"
 	;;
-	1) echo "Eep!"
+	1) echo -e "\nEep!\n"
 	;;
-	2) echo "(Mary glances around nervously)"
+	2) echo -e "\n(Mary glances around nervously)\n"
 	;;
-	*) echo "(politely) Good Evening."
+	*) echo -e "\n(politely) Good Evening.\n"
 	;;
 
 esac
@@ -30,22 +32,23 @@ cat << EOF
                         2. Where were you at the time of the murder?
 			3. Anything else you want to note?
                         0. (Stop Talking)
+
 EOF
 
 read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) echo "I loved my dad! I would never do anything to him! I swear!"
+        1) echo -e "\nI loved my dad! I would never do anything to him! I swear!\n"
         ;;
-        2) echo "I was in the parlor, I needed to just be alone for a bit. Ms. Mannington was there though."
+        2) echo -e "\nI was in the parlor, I needed to just be alone for a bit. Ms. Mannington was there though.\n"
         ;;
-	3) echo "No! there's nothing else! I didn't see anything!"
+	3) echo -e "\nNo! there's nothing else! I didn't see anything!\n"
 	;;
         0) talking=1
 	 break
         ;;
-        *) echo "Invalid entry."
+        *) echo -e "\nInvalid entry.\n"
         ;;
 esac
 done

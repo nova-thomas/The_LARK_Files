@@ -2,22 +2,24 @@
 # Larry Langford
 
 cat << EOF
+
 Larry Langford couldn't have been a day over 25 by your estimates. Makes you wonder why he got into gardening at such a young age. He has a small cut on his left forearm, most likely from some thorn or garden tool, you suppose. As you approach him, he rises from the garden bed he was working on, and you see that he's quite tall and muscular.
+
 EOF
 
 talking=0
 while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=$(( RANDOM % 2 ))
+rand=$(( RANDOM % 3 ))
 case $rand in 
-	0) echo "What can I do for ya, Detective?"
+	0) echo -e "\nWhat can I do for ya, Detective?\n"
 	;;
-	1) echo "Anything I can help with?"
+	1) echo -e "\nAnything I can help with?\n"
 	;;
-	2) echo "What's up?"
+	2) echo -e "\nWhat's up?\n"
 	;;
-	*) echo "How's the search goin?"
+	*) echo -e "\nHow's the search goin?\n"
 	;;
 
 esac
@@ -30,22 +32,23 @@ cat << EOF
                         2. Where were you at the time of the murder?
 			3. Anything else you want to note?
                         0. (Stop Talking)
+
 EOF
 
 read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) echo "Can't say much for how he is with the rest of the crew around here, but when he and his buddies from the country club are over, they always seem to have *tons* of fun playing golf all around the gardens. Why does he have such little regard for all these beautiful flowers?"
+        1) echo -e "\nCan't say much for how he is with the rest of the crew around here, but when he and his buddies from the country club are over, they always seem to have *tons* of fun playing golf all around the gardens. Why does he have such little regard for all these beautiful flowers?\n"
         ;;
-        2) echo "I was fixing these beds around here, when ol' Dudley came out and asked how I was doing. He's a great man. A little later he went back inside, and I didn't see anything after that."
+        2) echo -e "\nI was fixing these beds around here, when ol' Dudley came out and asked how I was doing. He's a great man. A little later he went back inside, and I didn't see anything after that.\n"
         ;;
-	3) echo "Well, I don't want to get anyone in trouble, but I did overhear the maid and Sir Oswald arguing about something when I was working on a garden bed outside a window one time. I didn't catch much, but it seemed pretty heated."
+	3) echo -e "\nWell, I don't want to get anyone in trouble, but I did overhear the maid and Sir Oswald arguing about something when I was working on a garden bed outside a window one time. I didn't catch much, but it seemed pretty heated.\n"
 	;;
         0) talking=1
 	 break
         ;;
-        *) echo "Invalid entry."
+        *) echo -e "\nInvalid entry.\n"
         ;;
 esac
 done

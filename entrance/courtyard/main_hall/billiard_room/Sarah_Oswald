@@ -2,22 +2,24 @@
 # Sarah Oswald
 
 cat << EOF
+
 The wife of the late Sir Walter Oswald. Sarah is a very poised woman, giving off an air of pure wealth and privilage. She looked twice the age of her husband, but you doubt that was true. As you approach, she wrinkles her nose, seemingly out of reflex.
+
 EOF
 
 talking=0
 while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=$(( RANDOM % 2 ))
+rand=$(( RANDOM % 3 ))
 case $rand in 
-	0) echo "Finally, we've been waiting for ages."
+	0) echo -e "\nFinally, we've been waiting for ages.\n"
 	;;
-	1) echo "Oh, hello *Detective*, what can I help you with?"
+	1) echo -e "\nOh, hello *Detective*, what can I help you with?\n"
 	;;
-	2) echo "Now that you're *finally* here, what can I do for you?"
+	2) echo -e "\nNow that you're *finally* here, what can I do for you?\n"
 	;;
-	*) echo "What in the world kept you?"
+	*) echo -e "\nWhat in the world kept you?\n"
 	;;
 
 esac
@@ -30,22 +32,23 @@ cat << EOF
                         2. Where were you at the time of the murder?
 			3. Anything else you want to note?
                         0. (Stop Talking)
+
 EOF
 
 read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) echo "My husband? That man was a skeevy, no good pervert is what he was. Always off with that maid. Of course he wanted to be in charge of the hiring process on that one."
+        1) echo -e "\nMy husband? That man was a skeevy, no good pervert is what he was. Always off with that maid. Of course he wanted to be in charge of the hiring process on that one.\n"
         ;;
-        2) echo "I went to talk to my son, John. He's been getting so sloppy lately, and needs to be reminded constantly about those college applications. I went to an Ivy League school you know. My baby should have nothing less. He won't have anything less."
+        2) echo -e "\nI went to talk to my son, John. He's been getting so sloppy lately, and needs to be reminded constantly about those college applications. I went to an Ivy League school you know. My baby should have nothing less. He won't have anything less.\n"
         ;;
-	3) echo "Yes. Ever since I had my first child, Dubois has always taken the kids side on everything, always opposing me and Walter's decisions behind our backs, and putting hippie thoughts of that doing what ever you want stuff. Utter nonsense."
+	3) echo -e "\nYes. Ever since I had my first child, Dubois has always taken the kids side on everything, always opposing me and Walter's decisions behind our backs, and putting hippie thoughts of that doing what ever you want stuff. Utter nonsense.\n"
 	;;
         0) talking=1
 	 break
         ;;
-        *) echo "Invalid entry."
+        *) echo -e "\nInvalid entry.\n"
         ;;
 esac
 done
