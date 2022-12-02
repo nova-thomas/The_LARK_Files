@@ -9,11 +9,11 @@ EOF
 
 sleep 2
 
-talking=true
-while [ talking -eq true ]
+talking=0
+while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=(( $RANDOM % 2 ))
+rand=$(( RANDOM % 2 ))
 case $rand in 
 	0) echo "How may I help you?"
 	;;
@@ -41,11 +41,11 @@ read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) #reply to question 1
+        1) echo "I hate to speak ill of the dead, but he was a very cruel man. He has done some horrible things in his life, and excuse my words, but the family will be better off without him around."
         ;;
-        2) #reply to question 2
+        2) echo "I was conversing with the gardener in the conservatory when I heard the chef shout that dinner was about to be ready. So, as any butler would, I went up to inform Sir Oswald, and that was wnen I found him, tragically murdered..."
         ;;
-	3) #reply to question 3
+	3) echo "Now I know no one here would murder anyone, but I do think that Mr. Benson is a bit too violent for my liking. That is all I will say!!"
 	;;
 	4)
 	invCount=$(ls -a $home/.inventory | wc -l)
@@ -133,11 +133,10 @@ EOF
 	echo "I'm sorry, it doesn't look like you have all the evidence! Please come back when you have gathered everything"
 	fi
 	;;
-        0) talking=false
+        0) talking=1
 	 break
         ;;
         *) echo "Invalid entry."
         ;;
 esac
 done
-clear

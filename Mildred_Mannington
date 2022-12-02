@@ -1,23 +1,23 @@
 #!/bin/bash
-#character name
+# Mildred Mannington
 
 cat << EOF
-#put description of character and the first thing they say here.
+Mildred Mannington seems to be a very prim and proper maid by societies standards. On her apron, you can see a powdery gray substance. Dust, maybe chalk of some kind. She seems a little extra stiff and tense when you approach. Could she be hiding something?
 EOF
 
-talking=true
-while [ talking -eq true ]
+talking=0
+while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=(( $RANDOM % 2 ))
+rand=$(( RANDOM % 2 ))
 case $rand in 
-	0) echo "_____________"
+	0) echo "Detective. What can I help you with."
 	;;
-	1) echo "_____________"
+	1) echo "Good evening Detective."
 	;;
-	2) echo "_____________"
+	2) echo "What would you like to know?"
 	;;
-	*) echo "_____________"
+	*) echo "Hello Detective."
 	;;
 
 esac
@@ -36,17 +36,16 @@ read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) #reply to question 1
+        1) echo "Why do you ask? Oh, right. Um, He was a wonderful boss. I was very happy to work for him. I am very sad that he has passed..."
         ;;
-        2) #reply to question 2
+        2) echo "I was cleaning the parlor. Mary came in later in the evening to rest on the couch, so I tried to hurry to clean up and get out of her way."
         ;;
-	3) #reply to question 3
+	3) echo "Mrs. Oswald has always been out to get me. Every since... never mind. Forget I said anything!! Please don't tell her I said anything!"
 	;;
-        0) talking=false
+        0) talking=1
 	 break
         ;;
         *) echo "Invalid entry."
         ;;
 esac
 done
-clear

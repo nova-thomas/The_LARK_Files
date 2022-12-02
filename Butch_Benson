@@ -1,23 +1,23 @@
 #!/bin/bash
-#character name
+# Butch Benson
 
 cat << EOF
-#put description of character and the first thing they say here.
+A gruff looking man, Butch Benson was only hired on a couple years ago. His sleeves have blood stains on them, and you can't tell if they're old or fresh, but surely just from working with raw meat for meals, right?
 EOF
 
-talking=true
-while [ talking -eq true ]
+talking=0
+while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=(( $RANDOM % 2 ))
+rand=$(( RANDOM % 2 ))
 case $rand in 
-	0) echo "_____________"
+	0) echo "Hmph, what is it?"
 	;;
-	1) echo "_____________"
+	1) echo "What?"
 	;;
-	2) echo "_____________"
+	2) echo "You got something to say to me?"
 	;;
-	*) echo "_____________"
+	*) echo "Go on, move it!"
 	;;
 
 esac
@@ -36,17 +36,16 @@ read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) #reply to question 1
+        1) echo "That arsehole? Nothing good that's for sure. He's always late on my paycheck, and for a rich guy, you'd think he'd have the dough to pay his own staff. Not to mention this cramped kitchen they have me slaving away in all the time. It doesn't even have proper ventilation!"
         ;;
-        2) #reply to question 2
+        2) echo "Making dinner! What do you think? That dinner was a nightmare to make. It took ages in the oven!"
         ;;
-	3) #reply to question 3
+	3) echo "Now don't let this get around, but that stupid gardener doesn't even do half the work I do, and still gets paid on time. He's always complaining about how his garden's are getting ruined too, but who cares! I suppose he might have a little bit of a grudge against ol' Oswald for ruining the 'pretty flowers' with his golf buddies"
 	;;
-        0) talking=false
+        0) talking=1
 	 break
         ;;
         *) echo "Invalid entry."
         ;;
 esac
 done
-clear

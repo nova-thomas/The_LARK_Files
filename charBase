@@ -9,7 +9,7 @@ talking=true
 while [ talking -eq true ]
 do
 # Random prompts
-rand=(( $RANDOM % 2 ))
+rand=$(( RANDOM % 2 ))
 case $rand in 
 	0) echo "_____________"
 	;;
@@ -49,4 +49,3 @@ case $selection in
         ;;
 esac
 done
-clear

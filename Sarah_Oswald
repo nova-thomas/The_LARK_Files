@@ -1,23 +1,23 @@
 #!/bin/bash
-#character name
+# Sarah Oswald
 
 cat << EOF
-#put description of character and the first thing they say here.
+The wife of the late Sir Walter Oswald. Sarah is a very poised woman, giving off an air of pure wealth and privilage. She looked twice the age of her husband, but you doubt that was true. As you approach, she wrinkles her nose, seemingly out of reflex.
 EOF
 
-talking=true
-while [ talking -eq true ]
+talking=0
+while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=(( $RANDOM % 2 ))
+rand=$(( RANDOM % 2 ))
 case $rand in 
-	0) echo "_____________"
+	0) echo "Finally, we've been waiting for ages."
 	;;
-	1) echo "_____________"
+	1) echo "Oh, hello *Detective*, what can I help you with?"
 	;;
-	2) echo "_____________"
+	2) echo "Now that you're *finally* here, what can I do for you?"
 	;;
-	*) echo "_____________"
+	*) echo "What in the world kept you?"
 	;;
 
 esac
@@ -36,17 +36,16 @@ read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) #reply to question 1
+        1) echo "My husband? That man was a skeevy, no good pervert is what he was. Always off with that maid. Of course he wanted to be in charge of the hiring process on that one."
         ;;
-        2) #reply to question 2
+        2) echo "I went to talk to my son, John. He's been getting so sloppy lately, and needs to be reminded constantly about those college applications. I went to an Ivy League school you know. My baby should have nothing less. He won't have anything less."
         ;;
-	3) #reply to question 3
+	3) echo "Yes. Ever since I had my first child, Dubois has always taken the kids side on everything, always opposing me and Walter's decisions behind our backs, and putting hippie thoughts of that doing what ever you want stuff. Utter nonsense."
 	;;
-        0) talking=false
+        0) talking=1
 	 break
         ;;
         *) echo "Invalid entry."
         ;;
 esac
 done
-clear

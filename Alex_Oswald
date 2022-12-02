@@ -1,21 +1,21 @@
 #!/bin/bash
-#character name
+# Alex Oswald
 
 cat << EOF
-#put description of character and the first thing they say here.
+As the middle child, Alex seems to be the odd one out in the family. As you enter the library, you could see them surrounded by a mountain of books in the corner, with a dim lamp beside them. As you glance at the books around them, you see various gothic and romance literatures.
 EOF
 
-talking=true
-while [ talking -eq true ]
+talking=0
+while [ $talking -eq 0 ]
 do
 # Random prompts
-rand=(( $RANDOM % 2 ))
+rand=$(( RANDOM % 2 ))
 case $rand in 
-	0) echo "_____________"
+	0) echo "hi... what's up."
 	;;
-	1) echo "_____________"
+	1) echo "anything i can answer for you?"
 	;;
-	2) echo "_____________"
+	2) echo "can i just go back to reading my books..."
 	;;
 	*) echo "_____________"
 	;;
@@ -36,17 +36,16 @@ read -p "Enter selection [0-3] > " selection
 
 # act on selection
 case $selection in
-        1) #reply to question 1
+        1) echo "my dad was a douchebag. he deserved what was coming to him. he never cared about his kids, especially not me. why should i feel sorry for him?"
         ;;
-        2) #reply to question 2
+        2) echo "here like always. i know you're trying to figure out who killed him, but it wasn't me. i was here the entire time, planning on skipping dinner too. all i saw was Mary come in to grab a book, but that was it. she said something about going to read in her room, but i don't know where she went."
         ;;
-	3) #reply to question 3
+	3) echo "not really. i don't really talk to anyone around here. no one really likes me, so i keep to myself."
 	;;
-        0) talking=false
+        0) talking=1
 	 break
         ;;
         *) echo "Invalid entry."
         ;;
 esac
 done
-clear
