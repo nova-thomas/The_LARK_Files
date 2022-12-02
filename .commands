@@ -4,6 +4,8 @@ Common Commands:
 
      $commands - lists all of the commands
 
+     $inventory - Check the contents of your inventory.
+
      map - Prints a map of the house
 
      quit - Quits the game and brings you to the home directory.
@@ -19,5 +21,3 @@ Common Commands:
      cd (directory) - Moving to that "room" (directory). Use "cd .." to take a step back to the parent directory/room.
 
      . ./(script name) - Use this for interacting with characters and items.
-
-     echo $inventory - Check the contents of your inventory.

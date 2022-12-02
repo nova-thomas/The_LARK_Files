@@ -1,0 +1,21 @@
+#!/bin/bash
+# Used_Candles
+
+if ! echo "$inventory" | grep Used_Candles > /dev/null; then
+
+cat << EOF
+A couple of burned down candles are tossed into the middle of the room. From the trajectory of how they were thrown, they seem to be thrown in from the doorway.
+
+Put this in your inventory by typing "take Used_Candles"
+(This creates a variable and adds on a file location to the variable, creating a list of file locations)
+
+You can view your inventory by typing "\$inventory".
+EOF
+
+else 
+cat << EOF
+A couple of burned down candles are tossed into the middle of the room. From the trajectory of how they were thrown, they seem to be thrown in from the doorway.
+
+EOF
+
+fi

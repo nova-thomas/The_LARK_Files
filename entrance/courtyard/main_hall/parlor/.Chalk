@@ -1,0 +1,21 @@
+#!/bin/bash
+# .Chalk
+
+if ! echo "$inventory" | grep .Chalk > /dev/null; then
+
+cat << EOF
+A small stick of chalk was dropped in the middle of the room.
+
+Put this in your inventory by typing "take .Chalk"
+(This creates a variable and adds on a file location to the variable, creating a list of file locations)
+
+You can view your inventory by typing "echo \$inventory".
+EOF
+
+else 
+cat << EOF
+A small stick of chalck was dropped in the middle of the room.
+
+EOF
+
+fi

@@ -13,7 +13,7 @@ family, as well as the staff of the house that the Oswald's employ. Your mission
 the house, collecting clues, and figurin out who murdered poor Mr. Oswald. 
 
 Instructions: 
-To start the game, type ". ./StartGame"
+To start the game, type ". ./StartGame.sh"
 
 When you believe that you have figured out who murdered Sir Walter Oswald, find the Butler, and interact with him. He is the one who you will bring your findings to. 
 You must gather 5 pieces of evidence before making the accusation. Luckily there are only 5 pieces of evidence!
