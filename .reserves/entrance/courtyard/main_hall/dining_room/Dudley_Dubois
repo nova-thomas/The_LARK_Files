@@ -85,15 +85,15 @@ EOF
 			break
 			;;
 			2)
-			
+			echo "His own wife? That's a bold accusation. Are you sure the evidence points to her?"
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			3)
-			
+			echo "The eldest son. I could understand how the pressure might bring him to something drastic, but I believe he is too kind to do something of this degree."
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			4)
-			
+			echo "Ah, the black sheep of the family. They're one of the kindest Oswald's if you get to know them. No, I don't believe that Alex was the murderer."
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			5) #Mary Oswald, winning condition
@@ -109,19 +109,19 @@ EOF
 			resetVar
 			;;
 			6)
-			
+			echo "I know all of the staff quite well, and that poor woman would never hurt a soul!"
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			7)
-			
+			echo "Killing Sir Oswald for ruining is garden's is a bit extreme, don't you think?"
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			8)
-			
+			echo "Now I know that Butch is an abrasive fellow, but I don't believe he could have murdered Sir Oswald. He was in the kitchen the whole time!"
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			9)
-			
+			echo "Me? How dare you!! I've served this family for many years, and I would never let my personal feelings boil to the point of murder!!"
 			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
 			;;
 			0)
