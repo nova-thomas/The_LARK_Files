@@ -25,12 +25,16 @@ Common Commands:
 
      tail (file) - Use this to "inspect" an item or character.
 
-     mv (file) ~/The_LARK_Files_Nova_Thomas/inventory - Used for moving an item to your inventory.
+     mv (file) $inventory - Used for moving an item to your inventory.
 
      ./(script name) - Use this for interacting with characters and items.
 
-     vim ~/The_LARK_Files_Nova_Thomas/inventory/notes -  opens up a text editor to take notes about your findings.
+     vim $notes - Opens up a text editor to take notes about your findings.
 
-You can read this at any time by typing "cat ~/The_LARK_Files_Nova_Thomas/_readme.txt".
+     echo $notes - Reading your notes
+
+     echo (your notes) >> $notes - Quickly jotting down notes without opening the vim editor
+
+You can read this at any time by typing "cat $home/_readme.txt".
 
 Happy Sleuthing!
