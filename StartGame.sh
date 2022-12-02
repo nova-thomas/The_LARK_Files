@@ -14,7 +14,7 @@ function resetVar() {
 }
 
 function map {
-	ls -R | grep ":$" | grep -v inventory | sed -e 's/:$//' -e 's/[^-][^\/]*\//---/g' -e 's/-/|/'
+	ls -R $home/entrance | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//---/g' -e 's/-/|/'
         }
 
 function quit {
@@ -41,7 +41,7 @@ export originalPS1
 if [[ -e "entrance" ]]; then
 	rm -rf entrance
 	fi
-cp -rf .entrance entrance
+cp -rf .reserves/entrance entrance
 clear
 # Changing PS1 (Command Line Prompt)
 export PS1="[ \W ]\$ "

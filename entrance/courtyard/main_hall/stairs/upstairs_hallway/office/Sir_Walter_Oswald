@@ -1,0 +1,6 @@
+#!/bin/bash
+# Sir Walter Oswald
+
+cat << EOF
+The corpse of Sir Walter Oswald. From what you can tell, the cause of death was multiple stab wounds to the stomach. And for some odd reason, the faint smell of sulfer perferates the air.
+EOF

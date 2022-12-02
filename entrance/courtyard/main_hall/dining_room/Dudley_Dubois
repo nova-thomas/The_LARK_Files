@@ -7,7 +7,7 @@ and every member of the household and staff. Everyone except Sir Walter Oswald. 
 history of violence and abuse towards everyone he met, and Dudley resented him for that.
 EOF
 
-sleep 2
+sleep 1
 
 talking=0
 while [ $talking -eq 0 ]
@@ -48,8 +48,8 @@ case $selection in
 	3) echo "Now I know no one here would murder anyone, but I do think that Mr. Benson is a bit too violent for my liking. That is all I will say!!"
 	;;
 	4)
-	invCount=$(ls -a $home/.inventory | wc -l)
-	if [ invCount -eq 5 ]
+	invCount=$(ls -a $home/.inventory | grep -v .maid_lingerie | wc -l)
+	if [ invCount -ge 5 ]
 	then
 		echo "Oh? Wonderful news! And who is the murderous fellow?"
 		cat << EOF
@@ -98,14 +98,15 @@ EOF
 			;;
 			5) #Mary Oswald, winning condition
 			echo "Detective: It looks like all the evidence points to Mary Oswald!"
-			sleep 2
+			sleep 1
 			echo "\nMy God! I do believe you're right! I can't believe that this happened..."
-			sleep 2
-			echo "\n\nDespite Mary being posessed by a demon, the law still sees her guilty of Murder. Maybe one day someone will be able to track down\nthis demon and rid him from this world."
-			sleep 2
+			sleep 1
+			echo "\n\nFrom what you can tell, Mary Oswald summoned a demon. Maybe to fix her broken family, maybe to stop all the hatred from those around her in her life, maybe some other reason entirely.\n\nDespite Mary being posessed, the law still sees her guilty of Murder. Maybe one day someone will be able to track down this demon and rid him from this world."
+			sleep 5
 			echo "\n\nYou Win!! Congradulations! I hope you enjoyed playing \"The LARK Files\"!"
 			sleep 15
 			quit
+			resetVar
 			;;
 			6)
 			
@@ -130,7 +131,7 @@ EOF
 			;;
 		esac
 	else
-	echo "I'm sorry, it doesn't look like you have all the evidence! Please come back when you have gathered everything"
+	echo "I'm sorry, it doesn't look like you have all the evidence! Please come back when you have gathered everything."
 	fi
 	;;
         0) talking=1
