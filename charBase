@@ -1,0 +1,9 @@
+#!/bin/bash
+#character/item name
+
+cat << EOF
+#put description of character and the first thing they say here.
+
+EOF
+
+

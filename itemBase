@@ -1,0 +1,22 @@
+#!/bin/bash
+# Item name
+
+if ! echo "$inventory" | grep "********ITEM NAME********) > /dev/null; then
+
+cat << EOF
+#put description here
+
+Put this in your inventory by typing "export inventory=(*******ITEM NAME*********), \$inventory
+(This creates a variable and adds on a file location to the variable, creating a list of file locations)
+
+You can view your inventory by typing "echo \$inventory", using the echo command to view the contents of the variable.
+
+EOF
+
+else 
+cat << EOF
+# Duplicate the description here
+
+EOF
+
+fi
