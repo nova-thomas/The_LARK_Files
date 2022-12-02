@@ -18,7 +18,7 @@ function map {
 
 function quit {
 	cd $home
-	PS1=originalPS1
+	export PS1=$originalPS1
 	resetVar
 	clear
 }
