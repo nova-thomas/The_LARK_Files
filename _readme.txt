@@ -23,14 +23,17 @@ Common Commands:
 
      $commands - lists all of the commands
 
-     $map - Prints a map of the house
+     map - Prints a map of the house
 
+     quit - Quits the game and brings you to the home directory.
 
 	Unix/Linux Commands:
 
      ls (directory/file) - Use the current directory to "look" around the room, and use "ls inventory" to check your inventory.
 
      ls -a - Use this to look around the current "room" very closely for hidden items.
+
+     cd (directory) - Moving to that "room" (directory). Use "cd .." to take a step back to the parent directory/room.
 
      . ./(script name) - Use this for interacting with characters and items.
 
