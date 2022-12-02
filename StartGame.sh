@@ -33,7 +33,7 @@ resetVar
 originalPS1=$PS1
 home=$(pwd)
 commands="cat $home/.commands"
-inventory="ls -a $home/.inventory | grep -v . | grep -v .."
+inventory="ls -a $home/.inventory"
 export home
 export commands
 export originalPS1
