@@ -1,0 +1,143 @@
+#!/bin/bash
+# Dudley Dubois
+
+cat << EOF
+Dudley Dubois has been the butler of the Oswald household for many years. He cares about each 
+and every member of the household and staff. Everyone except Sir Walter Oswald. Walter had a
+history of violence and abuse towards everyone he met, and Dudley resented him for that.
+EOF
+
+sleep 1
+
+talking=0
+while [ $talking -eq 0 ]
+do
+# Random prompts
+rand=$(( RANDOM % 2 ))
+case $rand in 
+	0) echo "How may I help you?"
+	;;
+	1) echo "What may I do for you today?"
+	;;
+	2) echo "Hello Detective! How can I be of service?"
+	;;
+	*) echo "Any news on your investigation?"
+	;;
+
+esac
+
+cat << EOF	
+
+                        Please Select:
+
+                        1. What did you think of Sir Walter Oswald?
+                        2. Where were you at the time of the murder?
+			3. Anything else you want to note?
+			4. I know who killed Sir Walter Oswald!
+                        0. (Stop Talking)
+EOF
+
+read -p "Enter selection [0-3] > " selection
+
+# act on selection
+case $selection in
+        1) echo "I hate to speak ill of the dead, but he was a very cruel man. He has done some horrible things in his life, and excuse my words, but the family will be better off without him around."
+        ;;
+        2) echo "I was conversing with the gardener in the conservatory when I heard the chef shout that dinner was about to be ready. So, as any butler would, I went up to inform Sir Oswald, and that was wnen I found him, tragically murdered..."
+        ;;
+	3) echo "Now I know no one here would murder anyone, but I do think that Mr. Benson is a bit too violent for my liking. That is all I will say!!"
+	;;
+	4)
+	invCount=$(ls -a $home/.inventory | grep -v .maid_lingerie | wc -l)
+	if [ invCount -ge 5 ]
+	then
+		echo "Oh? Wonderful news! And who is the murderous fellow?"
+		cat << EOF
+			1. Sir Walter Oswald
+			2. Sarah Oswald
+			3. John Oswald
+			4. Alex Oswald
+			5. Mary Oswald
+			6. Mildred Mannington
+			7. Larry Langford
+			8. Butch Benson
+			9. Dudley Dubois
+			0. I need some more time to go over my notes
+EOF
+
+		read -p "Enter selection [0-8]" killer
+		read -p "Are you absolutely positive? That is a serious accusation against $killer [y-n]" lockIn
+		case $lockIn in
+			y) continue
+			;;
+			n) echo "Need some more time to think? I don't envy your tough decision."
+			break
+			;;
+			*) echo "Invalid Entry"
+			;;
+		esac
+		
+		
+		case $killer in 
+			1)
+			echo "A suicide, eh? I don't believe that to be true, the knife was too far away from the body for that."
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			break
+			;;
+			2)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			3)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			4)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			5) #Mary Oswald, winning condition
+			echo "Detective: It looks like all the evidence points to Mary Oswald!"
+			sleep 1
+			echo "\nMy God! I do believe you're right! I can't believe that this happened..."
+			sleep 1
+			echo "\n\nFrom what you can tell, Mary Oswald summoned a demon. Maybe to fix her broken family, maybe to stop all the hatred from those around her in her life, maybe some other reason entirely.\n\nDespite Mary being posessed, the law still sees her guilty of Murder. Maybe one day someone will be able to track down this demon and rid him from this world."
+			sleep 5
+			echo "\n\nYou Win!! Congradulations! I hope you enjoyed playing \"The LARK Files\"!"
+			sleep 15
+			quit
+			resetVar
+			;;
+			6)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			7)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			8)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			9)
+			
+			echo "\n\n---------- Looks like you didn't find the murderer! Keep looking around the house for clues!"
+			;;
+			0)
+			echo "No worries Detective! We don't want to accuse the wrong person."
+			;;
+			*) echo "Invalid Entry"
+			;;
+		esac
+	else
+	echo "I'm sorry, it doesn't look like you have all the evidence! Please come back when you have gathered everything."
+	fi
+	;;
+        0) talking=1
+	 break
+        ;;
+        *) echo "Invalid entry."
+        ;;
+esac
+done

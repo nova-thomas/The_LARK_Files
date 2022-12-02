@@ -1,0 +1,21 @@
+#!/bin/bash
+# .Satanic_Summoning_Circle
+
+if ! echo "$inventory" | grep .Satanic_Summoning_Circle > /dev/null; then
+
+cat << EOF
+A smudged summoning circle lies in the corner of the room. A rug was tossed messily on top of it in an attempt to hide it.
+
+Put a 'picture' of this in your inventory by typing "take .Satanic_Summoning_Circle"
+(This creates a variable and adds on a file location to the variable, creating a list of file locations)
+
+You can view your inventory by typing "\$inventory".
+EOF
+
+else 
+cat << EOF
+A smudged summoning circle lies in the corner of the room. A rug was tossed messily on top of it in an attempt to hide it.
+
+EOF
+
+fi

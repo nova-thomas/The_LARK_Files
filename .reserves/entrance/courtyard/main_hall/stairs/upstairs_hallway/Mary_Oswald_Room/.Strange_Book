@@ -1,0 +1,20 @@
+#!/bin/bash
+# .Strange_Book
+
+if ! echo "$inventory" | grep .Strange_Book > /dev/null; then
+
+cat << EOF
+There was an odd looking book hiding underneath the bed. When you look inside, you see a bunch of strange images and symbols.
+
+Put this in your inventory by typing "take .Strange_Book"
+(This creates a variable and adds on a file location to the variable, creating a list of file locations)
+
+You can view your inventory by typing "\$inventory".
+EOF
+
+else 
+cat << EOF
+There was an odd looking book hiding underneath the bed. When you look inside, you see a bunch of strange images and symbols.
+EOF
+
+fi

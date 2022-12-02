@@ -1,0 +1,21 @@
+#!/bin/bash
+# Kitchen_Knife
+
+if ! echo "$inventory" | grep Kitchen_Knife > /dev/null; then
+
+cat << EOF
+A well taken care of kitchen knife. The blade is slick with Sir Walter Oswald's blood.
+
+Put this in your inventory by typing "take Kitchen_Knife"
+(This creates a variable and adds on a file location to the variable, creating a list of file locations)
+
+You can view your inventory by typing "\$inventory".
+EOF
+
+else 
+cat << EOF
+A well taken care of kitchen knife. The blade is slick with Sir Walter Oswald's blood.
+
+EOF
+
+fi
