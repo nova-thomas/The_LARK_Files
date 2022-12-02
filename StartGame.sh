@@ -33,10 +33,19 @@ resetVar
 originalPS1=$PS1
 home=$(pwd)
 commands="cat $home/.commands"
-inventory="cat $home/.inventory"
+inventory="ls -a $home/.inventory | grep -v . | grep -v .."
 export home
 export commands
 export originalPS1
+
+
+if [ "$(ls -A $home/.inventory)" ]; then
+	rm -r $home/.inventory
+	else
+	rm -d $home/.inventory
+fi
+
+mkdir $home/.inventory
 
 if [[ -e "entrance" ]]; then
 	rm -rf entrance
