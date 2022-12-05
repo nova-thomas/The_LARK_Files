@@ -1,1 +1,3 @@
-If you ever forget how to do something, you can always access the commands by typing "$commands"!
+cat << EOF
+If you ever forget how to do something, you can always access the commands by typing "\$commands"!
+EOF

@@ -1,3 +1,5 @@
+cat << EOF
 To add an item to your inventory, simply type "take (item name)". This is a custom command!
 
 Once you have found all five of the items, talk to the butler, Dudley Dubois! You will present your findings to him.
+EOF

@@ -1,3 +1,5 @@
+cat << EOF
 Most items and characters are scripts. Interact with them by typing ". ./(file name)". 
 
 Go to the different directories ("Rooms")  with the cd command!
+EOF
